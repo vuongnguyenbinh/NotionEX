@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react'
 import { PanelLeft, RefreshCw, Settings, CheckCircle, Clock } from 'lucide-react'
+import { I18nextProvider } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
+import i18n, { initI18n } from '@/i18n'
 import { ThemeProvider } from '@/stores/theme-context'
 import { Button } from '@/components/shared'
 
 function PopupContent() {
+  const { t } = useTranslation()
   const [syncing, setSyncing] = useState(false)
   const [lastSync, setLastSync] = useState<Date | null>(null)
   const [pendingCount, setPendingCount] = useState(0)
@@ -41,11 +45,11 @@ function PopupContent() {
   }
 
   const formatLastSync = () => {
-    if (!lastSync) return 'Chưa đồng bộ'
+    if (!lastSync) return t('common.notSynced')
     const diff = Date.now() - lastSync.getTime()
-    if (diff < 60000) return 'Vừa xong'
-    if (diff < 3600000) return `${Math.floor(diff / 60000)} phút trước`
-    return `${Math.floor(diff / 3600000)} giờ trước`
+    if (diff < 60000) return t('common.justNow')
+    if (diff < 3600000) return t('common.minutesAgo', { count: Math.floor(diff / 60000) })
+    return t('common.hoursAgo', { count: Math.floor(diff / 3600000) })
   }
 
   return (
@@ -62,12 +66,12 @@ function PopupContent() {
           {pendingCount > 0 ? (
             <>
               <Clock className="w-3 h-3 text-warning" />
-              <span>{pendingCount} đang chờ</span>
+              <span>{pendingCount} {t('common.pending')}</span>
             </>
           ) : (
             <>
               <CheckCircle className="w-3 h-3 text-success" />
-              <span>Đã đồng bộ</span>
+              <span>{t('common.synced')}</span>
             </>
           )}
         </div>
@@ -82,7 +86,7 @@ function PopupContent() {
           icon={<PanelLeft className="w-4 h-4" />}
           onClick={openSidePanel}
         >
-          Mở Sidebar
+          {t('popup.openSidebar')}
         </Button>
         <Button
           variant="secondary"
@@ -91,7 +95,7 @@ function PopupContent() {
           onClick={handleSync}
           loading={syncing}
         >
-          {syncing ? 'Đang đồng bộ...' : 'Đồng bộ ngay'}
+          {syncing ? t('header.syncing') : t('popup.syncNow')}
         </Button>
       </div>
 
@@ -103,7 +107,7 @@ function PopupContent() {
           className="flex items-center gap-1 hover:text-[var(--text-primary)] transition-colors"
         >
           <Settings className="w-3 h-3" />
-          Cài đặt
+          {t('popup.settings')}
         </button>
       </div>
     </div>
@@ -111,9 +115,25 @@ function PopupContent() {
 }
 
 export default function Popup() {
+  const [i18nReady, setI18nReady] = useState(false)
+
+  useEffect(() => {
+    initI18n().then(() => setI18nReady(true))
+  }, [])
+
+  if (!i18nReady) {
+    return (
+      <div className="w-[300px] flex items-center justify-center p-4 bg-[var(--bg-primary)]">
+        <span className="text-[var(--text-secondary)]">Loading...</span>
+      </div>
+    )
+  }
+
   return (
-    <ThemeProvider>
-      <PopupContent />
-    </ThemeProvider>
+    <I18nextProvider i18n={i18n}>
+      <ThemeProvider>
+        <PopupContent />
+      </ThemeProvider>
+    </I18nextProvider>
   )
 }

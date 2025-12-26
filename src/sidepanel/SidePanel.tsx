@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Plus } from 'lucide-react'
+import { I18nextProvider } from 'react-i18next'
+import i18n, { initI18n } from '@/i18n'
 import { ThemeProvider } from '@/stores/theme-context'
 import { ToastProvider, useToast } from '@/stores/toast-context'
 import { Header, TabBar, FooterTabBar, ModuleTabBar } from '@/components/layout'
@@ -380,11 +382,27 @@ function SidePanelContent() {
 }
 
 export default function SidePanel() {
+  const [i18nReady, setI18nReady] = useState(false)
+
+  useEffect(() => {
+    initI18n().then(() => setI18nReady(true))
+  }, [])
+
+  if (!i18nReady) {
+    return (
+      <div className="flex items-center justify-center h-screen bg-[var(--bg-primary)]">
+        <div className="text-[var(--text-secondary)]">Loading...</div>
+      </div>
+    )
+  }
+
   return (
-    <ThemeProvider>
-      <ToastProvider>
-        <SidePanelContent />
-      </ToastProvider>
-    </ThemeProvider>
+    <I18nextProvider i18n={i18n}>
+      <ThemeProvider>
+        <ToastProvider>
+          <SidePanelContent />
+        </ToastProvider>
+      </ThemeProvider>
+    </I18nextProvider>
   )
 }
