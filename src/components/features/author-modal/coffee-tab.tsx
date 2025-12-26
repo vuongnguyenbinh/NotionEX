@@ -35,17 +35,17 @@ export function CoffeeTab() {
         </p>
       </div>
 
-      {/* QR Code */}
+      {/* QR Code - larger size */}
       <div className="bg-white p-3 rounded-lg inline-block shadow-sm">
         {!qrError ? (
           <img
             src={BANK_INFO.qrUrl}
             alt="QR Mời cà phê"
-            className="w-48 h-48"
+            className="w-56 h-56"
             onError={() => setQrError(true)}
           />
         ) : (
-          <div className="w-48 h-48 flex items-center justify-center bg-gray-100 rounded text-sm text-gray-500">
+          <div className="w-56 h-56 flex items-center justify-center bg-gray-100 rounded text-sm text-gray-500">
             QR không khả dụng
           </div>
         )}

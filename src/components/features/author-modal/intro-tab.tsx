@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Globe, Mail, Copy, Check } from 'lucide-react'
 
 const AUTHOR_INFO = {
-  name: 'Binh Vuong AI Marketing',
+  name: 'Bình Vương',
   website: 'https://binhvuong.vn',
   email: 'contact@binhvuong.vn',
 }
@@ -32,7 +32,7 @@ export function IntroTab() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       {/* Logo + Name */}
       <div className="text-center">
         <img
@@ -40,17 +40,56 @@ export function IntroTab() {
           alt="Logo"
           className="w-16 h-16 mx-auto mb-2"
         />
-        <h3 className="font-semibold text-lg">{AUTHOR_INFO.name}</h3>
+        <h3 className="font-semibold text-lg">Xin chào! Tôi là {AUTHOR_INFO.name}</h3>
+        <p className="text-xs text-[var(--text-tertiary)] italic">Hello! I'm {AUTHOR_INFO.name}</p>
       </div>
 
       {/* About section */}
       <section>
-        <h4 className="text-sm font-semibold mb-2 text-brand">Giới thiệu / About</h4>
         <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-          Xin chào! Tôi là Bình Vương, một AI Marketing specialist. Extension này được phát triển để giúp bạn quản lý công việc hiệu quả hơn với khả năng đồng bộ Notion.
+          Tôi là một marketer đam mê việc ứng dụng AI để hệ thống hóa cách thức quản lý và triển khai marketing cho doanh nghiệp.
         </p>
-        <p className="text-xs text-[var(--text-tertiary)] mt-1.5 italic">
-          Hello! I'm Binh Vuong, an AI Marketing specialist. This extension was developed to help you manage your work more efficiently with Notion sync capabilities.
+        <p className="text-xs text-[var(--text-tertiary)] mt-1 italic">
+          I'm a marketer passionate about applying AI to systematize management and marketing implementation for businesses.
+        </p>
+      </section>
+
+      {/* Extension idea section */}
+      <section>
+        <h4 className="text-sm font-semibold mb-2 text-brand">Ý tưởng Extension / Extension Idea</h4>
+        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+          Extension này ban đầu là công cụ được phát triển để team nội bộ và đối tác của tôi có thể làm việc hiệu quả - với khả năng đồng bộ Notion một cách mượt mà, quản lý công việc như một chuyên gia, ghi chú nhanh như chớp, bookmark mọi thứ quan trọng và tương tác hiệu quả với AI thông qua thư viện prompts một cách thông minh!
+        </p>
+        <p className="text-xs text-[var(--text-tertiary)] mt-1 italic">
+          This extension was originally developed for my internal team and partners to work efficiently - with seamless Notion sync, professional task management, lightning-fast notes, bookmark everything important, and interact effectively with AI through a smart prompts library!
+        </p>
+      </section>
+
+      {/* Story section */}
+      <section>
+        <h4 className="text-sm font-semibold mb-2 text-brand">...Và sau đó / And then</h4>
+        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+          Sau những phản hồi cực kỳ tích cực từ team và đối tác, tôi quyết định mang "bí kíp" này ra chia sẻ với cộng đồng!
+        </p>
+        <p className="text-xs text-[var(--text-tertiary)] mt-1 italic">
+          After extremely positive feedback from the team and partners, I decided to share this "secret" with the community!
+        </p>
+      </section>
+
+      {/* Mission section */}
+      <section>
+        <h4 className="text-sm font-semibold mb-2 text-brand">Mong muốn của tôi / My Mission</h4>
+        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+          Giúp bạn biến đổi quy trình làm việc và tăng năng suất - bởi vì ai cũng xứng đáng được làm việc thông minh hơn, chứ không phải vất vả hơn!
+        </p>
+        <p className="text-xs text-[var(--text-tertiary)] mt-1 italic">
+          Help you transform your workflow and boost productivity - because everyone deserves to work smarter, not harder!
+        </p>
+        <p className="text-sm text-[var(--text-primary)] font-medium mt-3 text-center">
+          Chúc bạn làm việc hiệu quả! ✨
+        </p>
+        <p className="text-xs text-[var(--text-tertiary)] italic text-center">
+          Wishing you productive work!
         </p>
       </section>
 
@@ -58,18 +97,18 @@ export function IntroTab() {
       <section>
         <h4 className="text-sm font-semibold mb-3 text-brand">Mời cà phê / Buy me a coffee</h4>
         <div className="bg-[var(--bg-secondary)] rounded-lg p-4">
-          {/* QR Code */}
+          {/* QR Code - larger size */}
           <div className="flex justify-center mb-3">
             <div className="bg-white p-2 rounded-lg shadow-sm">
               {!qrError ? (
                 <img
                   src={BANK_INFO.qrUrl}
                   alt="QR Mời cà phê"
-                  className="w-32 h-32"
+                  className="w-44 h-44"
                   onError={() => setQrError(true)}
                 />
               ) : (
-                <div className="w-32 h-32 flex items-center justify-center bg-gray-100 rounded text-xs text-gray-500">
+                <div className="w-44 h-44 flex items-center justify-center bg-gray-100 rounded text-xs text-gray-500">
                   QR không khả dụng
                 </div>
               )}
