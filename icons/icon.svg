@@ -1,0 +1,38 @@
+<svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+            
+            <!-- Background: Charcoal -->
+            <rect width="512" height="512" fill="#1E1E2A"></rect>
+
+            <!-- MASK: Diagonal Split -->
+            <defs>
+                <clipPath id="split-mask">
+                    <!-- Top-Left Triangle -->
+                    <path d="M0 0 H512 L0 512 Z"></path>
+                </clipPath>
+            </defs>
+
+            <!-- SECTION 1 (Top-Left): BRAND LOGO (Dynamic Ripple) -->
+            <!-- Using mask to keep it in the top-left half -->
+            <g clip-path="url(#split-mask)">
+                <!-- Ripple 1 (Outer) -->
+                <circle cx="180" cy="180" r="140" stroke="#DA251D" stroke-width="32"></circle>
+                <!-- Ripple 2 (Inner) -->
+                <circle cx="180" cy="180" r="70" stroke="#DA251D" stroke-width="32"></circle>
+                <!-- Core Dot -->
+                <circle cx="180" cy="180" r="25" fill="#DA251D"></circle>
+            </g>
+
+            <!-- SECTION 2 (Bottom-Right): FEATURE ICONS (Task & Bookmark) -->
+            <!-- Positioned in the bottom-right open space -->
+            <g transform="translate(260, 260) scale(1.2)">
+                <!-- Bookmark Icon -->
+                <path d="M100 0H40C28.95 0 20 8.95 20 20V140L70 110L120 140V20C120 8.95 111.05 0 100 0Z" fill="white" fill-opacity="0.9"></path>
+                
+                <!-- Checkmark/Task Icon overlaying -->
+                <circle cx="40" cy="100" r="35" fill="#DA251D" stroke="#1E1E2A" stroke-width="6"></circle>
+                <path d="M28 100L36 108L52 92" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+
+            <!-- DIVIDER LINE (Optional aesthetic split) -->
+            <line x1="0" y1="512" x2="512" y2="0" stroke="#1E1E2A" stroke-width="8" stroke-opacity="0.5"></line>
+        </svg>
