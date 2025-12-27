@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus to Notion - Your Browser Sidebar for Focused Productivity</title>
+  <meta name="description" content="Manage tasks, save bookmarks, and capture ideas without leaving your current page. Everything syncs with Notion automatically. Free Chrome extension.">
+  <meta name="keywords" content="notion, chrome extension, productivity, tasks, bookmarks, notes, ai prompts, offline first">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Focus to Notion - Your Browser Sidebar for Focused Productivity">
+  <meta property="og:description" content="Manage tasks, save bookmarks, and capture ideas without leaving your current page.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://focustonotion.com">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="Focus to Notion" width="32" height="32" onerror="this.style.display='none'">
+          <span>Focus to Notion</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="active" data-i18n="nav.home">Home</a></li>
+          <li><a href="features.html" data-i18n="nav.features">Features</a></li>
+          <li><a href="install.html" data-i18n="nav.guide">Guide</a></li>
+          <li><a href="https://github.com/vuongnguyenbinh/NotionEX" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <div class="lang-toggle">
+            <button onclick="setLang('en')" id="langEn" class="active" aria-label="English">EN</button>
+            <button onclick="setLang('vi')" id="langVi" aria-label="Vietnamese">VI</button>
+          </div>
+          <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+            <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/>
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+            <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+          <a href="https://chromewebstore.google.com/detail/focus-to-notion" class="btn btn-primary btn-nav" target="_blank" rel="noopener" data-i18n="nav.install">Install Free</a>
+          <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 12h18M3 6h18M3 18h18"/>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section 1: Hero -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="hero-pattern"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+            </svg>
+          </span>
+          <span data-i18n="hero.badge">Free Chrome Extension</span>
+          <span class="badge-separator">|</span>
+          <span class="badge-rating">4.8 (500+ reviews)</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span data-i18n="hero.title1">Stop Juggling Browser Tabs.</span>
+          <span class="title-highlight" data-i18n="hero.title2">Start Getting Things Done.</span>
+        </h1>
+
+        <p class="hero-description" data-i18n="hero.description">
+          Manage tasks, save bookmarks, and capture ideas without leaving your current page. Everything syncs with Notion while working offline-first.
+        </p>
+
+        <div class="hero-cta">
+          <a href="https://chromewebstore.google.com/detail/focus-to-notion" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            <span data-i18n="hero.cta1">Add to Chrome - Free</span>
+          </a>
+          <a href="#demo" class="btn btn-outline btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/>
+            </svg>
+            <span data-i18n="hero.cta2">How It Works</span>
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span data-i18n="hero.trust1">No account required to start</span>
+          </div>
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span data-i18n="hero.trust2">Works offline</span>
+          </div>
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span data-i18n="hero.trust3">Your data stays on your device</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="browser-mockup">
+          <div class="browser-header">
+            <div class="browser-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="browser-address">
+              <span class="browser-url">notion.so/workspace</span>
+            </div>
+          </div>
+          <div class="browser-content">
+            <div class="sidebar-preview">
+              <div class="sidebar-tabs">
+                <span class="tab active">Tasks</span>
+                <span class="tab">Bookmarks</span>
+                <span class="tab">Notes</span>
+                <span class="tab">Prompts</span>
+              </div>
+              <div class="sidebar-items">
+                <div class="task-item">
+                  <span class="task-check"></span>
+                  <span class="task-text">Review project proposal</span>
+                  <span class="task-priority high"></span>
+                </div>
+                <div class="task-item">
+                  <span class="task-check"></span>
+                  <span class="task-text">Write documentation</span>
+                  <span class="task-priority medium"></span>
+                </div>
+                <div class="task-item done">
+                  <span class="task-check checked"></span>
+                  <span class="task-text">Team meeting notes</span>
+                  <span class="task-priority low"></span>
+                </div>
+              </div>
+              <div class="sidebar-sync">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M23 4v6h-6M1 20v-6h6"/>
+                  <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+                </svg>
+                <span>Synced with Notion</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Problem Statement -->
+  <section class="problems">
+    <div class="container">
+      <h2 class="section-title" data-i18n="problems.title">Sound Familiar?</h2>
+
+      <div class="problems-grid">
+        <div class="problem-card">
+          <div class="problem-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M3 9h18M9 21V9"/>
+            </svg>
+          </div>
+          <h3 data-i18n="problems.tabs.title">50+ tabs open, can't find anything</h3>
+          <p data-i18n="problems.tabs.desc">You bookmark "for later" but later never comes.</p>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <h3 data-i18n="problems.ideas.title">Ideas lost between apps</h3>
+          <p data-i18n="problems.ideas.desc">Great thought in browser, noted in Notion, action item in Todoist... scattered everywhere.</p>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3 data-i18n="problems.focus.title">Context switching kills focus</h3>
+          <p data-i18n="problems.focus.desc">Every time you switch apps, you lose 23 minutes of deep work.</p>
+        </div>
+      </div>
+
+      <p class="problems-transition" data-i18n="problems.transition">What if everything lived right where you work?</p>
+    </div>
+  </section>
+
+  <!-- Section 3: Solution Demo -->
+  <section class="demo" id="demo">
+    <div class="container">
+      <h2 class="section-title" data-i18n="demo.title">Your Second Brain, Inside Your Browser</h2>
+
+      <div class="demo-wrapper">
+        <div class="demo-video">
+          <div class="video-placeholder">
+            <div class="play-button">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+            </div>
+            <span class="video-duration">2:00</span>
+          </div>
+        </div>
+        <p class="demo-caption" data-i18n="demo.caption">Capture, Organize, Sync - without leaving your page</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Core Features -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="features.title">Everything You Need to Stay Focused</h2>
+        <p class="section-subtitle" data-i18n="features.subtitle">A powerful sidebar that lives in your browser. Capture, organize, and sync - all in one place.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon tasks">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 11l3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+          </div>
+          <h3 data-i18n="features.tasks.title">Task Management</h3>
+          <p data-i18n="features.tasks.desc">Track tasks with priority levels (High/Medium/Low) and deadlines. One-click completion marking.</p>
+          <ul class="feature-list">
+            <li data-i18n="features.tasks.f1">High/Medium/Low priority</li>
+            <li data-i18n="features.tasks.f2">Due date picker</li>
+            <li data-i18n="features.tasks.f3">Filter by status</li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon bookmarks">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <h3 data-i18n="features.bookmarks.title">Smart Bookmarks</h3>
+          <p data-i18n="features.bookmarks.desc">Save pages with categories and tags. Drag-drop URLs for quick capture with auto-fetched metadata.</p>
+          <ul class="feature-list">
+            <li data-i18n="features.bookmarks.f1">Drag-drop URLs</li>
+            <li data-i18n="features.bookmarks.f2">Custom categories & tags</li>
+            <li data-i18n="features.bookmarks.f3">Search across all saves</li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon notes">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <h3 data-i18n="features.notes.title">Quick Notes</h3>
+          <p data-i18n="features.notes.desc">Capture thoughts instantly with Markdown support. Never lose a brilliant idea again.</p>
+          <ul class="feature-list">
+            <li data-i18n="features.notes.f1">Full Markdown editor</li>
+            <li data-i18n="features.notes.f2">Link to current page</li>
+            <li data-i18n="features.notes.f3">Templates (coming soon)</li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon prompts">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              <path d="M8 10h8M8 14h4"/>
+            </svg>
+          </div>
+          <h3 data-i18n="features.prompts.title">AI Prompts Library</h3>
+          <p data-i18n="features.prompts.desc">Store prompts for ChatGPT, Claude, and other AI tools. Share with team via Notion.</p>
+          <ul class="feature-list">
+            <li data-i18n="features.prompts.f1">Organize by category</li>
+            <li data-i18n="features.prompts.f2">Copy with one click</li>
+            <li data-i18n="features.prompts.f3">Version history</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="features-cta">
+        <a href="features.html" class="btn btn-outline" data-i18n="features.cta">Explore All Features</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Notion Sync -->
+  <section class="sync" id="sync">
+    <div class="container">
+      <div class="sync-content">
+        <div class="sync-text">
+          <h2 class="section-title" data-i18n="sync.title">Two-Way Notion Sync That Actually Works</h2>
+          <p class="sync-description" data-i18n="sync.description">Your browser and Notion, always in sync.</p>
+
+          <ul class="sync-features">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span data-i18n="sync.f1">Create a task in extension - appears in Notion</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span data-i18n="sync.f2">Update in Notion - reflects in extension</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span data-i18n="sync.f3">Auto-sync every 5 minutes</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span data-i18n="sync.f4">Manual sync anytime with one click</span>
+            </li>
+          </ul>
+
+          <p class="sync-note" data-i18n="sync.note">Works with your existing Notion workspace. No complex setup required.</p>
+
+          <a href="install.html#step3" class="sync-link" data-i18n="sync.cta">See how sync works</a>
+        </div>
+
+        <div class="sync-visual">
+          <div class="sync-diagram">
+            <div class="sync-box extension">
+              <div class="sync-box-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <path d="M9 3v18M21 9H9"/>
+                </svg>
+              </div>
+              <span>Focus to Notion</span>
+            </div>
+            <div class="sync-arrows">
+              <svg width="80" height="40" viewBox="0 0 80 40">
+                <path d="M5 20 L75 20" stroke="currentColor" stroke-width="2" stroke-dasharray="4 2"/>
+                <path d="M70 15 L75 20 L70 25" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M10 15 L5 20 L10 25" fill="none" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              <span class="sync-label">Real-time API</span>
+            </div>
+            <div class="sync-box notion">
+              <div class="sync-box-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v12h16V6H4z"/>
+                </svg>
+              </div>
+              <span>Notion</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Offline-First -->
+  <section class="offline">
+    <div class="container">
+      <div class="offline-content">
+        <div class="offline-icon">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M1 1l22 22"/>
+            <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/>
+            <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/>
+            <path d="M10.71 5.05A16 16 0 0 1 22.58 9"/>
+            <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/>
+            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+            <line x1="12" y1="20" x2="12.01" y2="20"/>
+          </svg>
+        </div>
+        <h2 class="section-title" data-i18n="offline.title">Works Offline. Syncs When Ready.</h2>
+        <p class="offline-description" data-i18n="offline.description">All your data stored locally in your browser. Lost connection? Keep working. Back online? Auto-sync resumes.</p>
+
+        <div class="offline-flow">
+          <div class="flow-step">
+            <div class="flow-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <span data-i18n="offline.step1">You</span>
+          </div>
+          <div class="flow-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="flow-step highlight">
+            <div class="flow-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+              </svg>
+            </div>
+            <span data-i18n="offline.step2">Browser Storage</span>
+            <small data-i18n="offline.step2sub">Always available</small>
+          </div>
+          <div class="flow-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="flow-step">
+            <div class="flow-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M9 3v18M21 9H9"/>
+              </svg>
+            </div>
+            <span>Notion</span>
+          </div>
+        </div>
+
+        <p class="offline-privacy" data-i18n="offline.privacy">Your notes, tasks, and bookmarks are yours. Nothing goes to our servers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Use Cases -->
+  <section class="use-cases" id="use-cases">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="usecases.title">Built for How You Actually Work</h2>
+        <p class="section-subtitle" data-i18n="usecases.subtitle">Whether you're researching, creating, or managing projects - Focus to Notion adapts to your workflow.</p>
+      </div>
+
+      <div class="use-cases-grid">
+        <div class="use-case-card">
+          <div class="use-case-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="M21 21l-4.35-4.35"/>
+            </svg>
+          </div>
+          <h3 data-i18n="usecases.research.title">Research & Learning</h3>
+          <p data-i18n="usecases.research.desc">Save articles while reading. Take notes without switching tabs. Track follow-up tasks inline.</p>
+          <a href="features.html#research" class="use-case-link" data-i18n="usecases.research.cta">See researcher workflow</a>
+        </div>
+
+        <div class="use-case-card">
+          <div class="use-case-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+              <path d="M2 2l7.586 7.586"/>
+              <circle cx="11" cy="11" r="2"/>
+            </svg>
+          </div>
+          <h3 data-i18n="usecases.content.title">Content Creation</h3>
+          <p data-i18n="usecases.content.desc">Bookmark references instantly. Draft ideas in markdown. Manage deadlines visually.</p>
+          <a href="features.html#content" class="use-case-link" data-i18n="usecases.content.cta">See creator workflow</a>
+        </div>
+
+        <div class="use-case-card">
+          <div class="use-case-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+            </svg>
+          </div>
+          <h3 data-i18n="usecases.project.title">Project Management</h3>
+          <p data-i18n="usecases.project.desc">Capture action items from meetings. Organize resources by project tags. Sync with your Notion board.</p>
+          <a href="features.html#project" class="use-case-link" data-i18n="usecases.project.cta">See PM workflow</a>
+        </div>
+
+        <div class="use-case-card">
+          <div class="use-case-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2a10 10 0 0 1 7.07 17.07A10 10 0 1 1 12 2"/>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+          <h3 data-i18n="usecases.ai.title">AI Workflow</h3>
+          <p data-i18n="usecases.ai.desc">Build your personal prompt library. Organize by use case. Share best prompts with team.</p>
+          <a href="features.html#ai" class="use-case-link" data-i18n="usecases.ai.cta">See AI workflow</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: Social Proof -->
+  <section class="social-proof">
+    <div class="container">
+      <h2 class="section-title" data-i18n="proof.title">Trusted by Productive People</h2>
+
+      <div class="stats-row">
+        <div class="stat-item">
+          <span class="stat-number">5,000+</span>
+          <span class="stat-label" data-i18n="proof.stat1">Users</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">4.8</span>
+          <span class="stat-label" data-i18n="proof.stat2">Rating</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">50K+</span>
+          <span class="stat-label" data-i18n="proof.stat3">Tasks saved</span>
+        </div>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" opacity="0.2">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+          </div>
+          <p class="testimonial-text" data-i18n="proof.t1.text">Finally, a tool that doesn't force me to leave what I'm reading. Game changer for my research workflow.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">ST</div>
+            <div class="author-info">
+              <span class="author-name">Sarah T.</span>
+              <span class="author-role" data-i18n="proof.t1.role">PhD Researcher</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" opacity="0.2">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+          </div>
+          <p class="testimonial-text" data-i18n="proof.t2.text">I've tried 10+ bookmark extensions. This is the only one that actually syncs with my Notion setup.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">ML</div>
+            <div class="author-info">
+              <span class="author-name">Mike L.</span>
+              <span class="author-role" data-i18n="proof.t2.role">Content Marketer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" opacity="0.2">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+          </div>
+          <p class="testimonial-text" data-i18n="proof.t3.text">The AI prompts library alone is worth it. My whole team uses the same extension now.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">DK</div>
+            <div class="author-info">
+              <span class="author-name">David K.</span>
+              <span class="author-role" data-i18n="proof.t3.role">AI Consultant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 9: Final CTA -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title" data-i18n="cta.title">Ready to Focus?</h2>
+        <p class="cta-subtitle" data-i18n="cta.subtitle">Join 5,000+ users who stopped tab-hopping and started doing.</p>
+
+        <div class="cta-buttons">
+          <a href="https://chromewebstore.google.com/detail/focus-to-notion" class="btn btn-primary btn-xl" target="_blank" rel="noopener">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            <span data-i18n="cta.button">Add to Chrome - Free Forever</span>
+          </a>
+          <a href="features.html" class="btn btn-ghost btn-lg" data-i18n="cta.secondary">View Documentation</a>
+        </div>
+
+        <p class="cta-note" data-i18n="cta.note">Chrome, Edge, and Brave supported. No credit card. No account required to start.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 10: Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Focus to Notion" width="32" height="32" onerror="this.style.display='none'">
+            <span>Focus to Notion</span>
+          </a>
+          <p class="footer-tagline" data-i18n="footer.tagline">Your browser sidebar for focused productivity. Tasks, bookmarks, notes - synced to Notion.</p>
+        </div>
+
+        <div class="footer-links-group">
+          <h4 data-i18n="footer.product">Product</h4>
+          <ul>
+            <li><a href="features.html" data-i18n="nav.features">Features</a></li>
+            <li><a href="install.html" data-i18n="nav.guide">Installation</a></li>
+            <li><a href="https://chromewebstore.google.com/detail/focus-to-notion" target="_blank" rel="noopener">Chrome Web Store</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4 data-i18n="footer.resources">Resources</h4>
+          <ul>
+            <li><a href="https://github.com/vuongnguyenbinh/NotionEX" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://github.com/vuongnguyenbinh/NotionEX/issues" target="_blank" rel="noopener" data-i18n="footer.issues">Report Issue</a></li>
+            <li><a href="guide.html" data-i18n="footer.guide">User Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4 data-i18n="footer.connect">Connect</h4>
+          <ul>
+            <li><a href="https://binhvuong.vn" target="_blank" rel="noopener">Binh Vuong AI</a></li>
+            <li><a href="https://youtube.com/@binhvuongai" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="mailto:contact@binhvuong.vn" data-i18n="footer.contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Focus to Notion. <span data-i18n="footer.credit">Made with</span> <span class="heart">love</span> <span data-i18n="footer.inVietnam">in Vietnam</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
+</body>
+</html>

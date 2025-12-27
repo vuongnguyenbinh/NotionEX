@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features - Focus to Notion</title>
+  <meta name="description" content="Discover all features of Focus to Notion: task management, smart bookmarks, quick notes, AI prompts library, and two-way Notion sync.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="Focus to Notion" onerror="this.style.display='none'">
+          <span>Focus to Notion</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="features.html" class="active" data-i18n="nav.features">Features</a></li>
+          <li><a href="install.html" data-i18n="nav.install">Installation</a></li>
+          <li><a href="index.html#use-cases" data-i18n="nav.useCases">Use Cases</a></li>
+          <li><a href="https://github.com/vuongnguyenbinh/NotionEX" target="_blank">GitHub</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <div class="lang-toggle">
+            <button onclick="setLang('en')" id="langEn" class="active">EN</button>
+            <button onclick="setLang('vi')" id="langVi">VI</button>
+          </div>
+          <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/>
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+          </button>
+          <a href="https://chromewebstore.google.com/detail/focus-to-notion" class="btn btn-primary" target="_blank" data-i18n="nav.addChrome">Add to Chrome</a>
+          <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 12h18M3 6h18M3 18h18"/>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section 1: Hero (Compact) -->
+  <section class="features-hero">
+    <div class="container">
+      <h1 data-i18n="featuresPage.title">Powerful Features, Simple Interface</h1>
+      <p class="hero-description" data-i18n="featuresPage.subtitle">A sidebar that lives in your browser. Capture, organize, and sync — all without disrupting your workflow.</p>
+    </div>
+  </section>
+
+  <!-- Section 2: Task Management (Deep dive) -->
+  <section class="feature-section" id="tasks">
+    <div class="container">
+      <div class="feature-detail">
+        <div class="feature-detail-image">
+          <div class="image-placeholder">
+            <span>Task Management Screenshot</span>
+          </div>
+        </div>
+        <div class="feature-detail-content">
+          <h2 data-i18n="featuresPage.tasks.title">Task Management</h2>
+          <p class="feature-tagline" data-i18n="featuresPage.tasks.tagline">Track what matters without leaving your page.</p>
+
+          <div class="feature-block">
+            <h4 data-i18n="featuresPage.tasks.create">Create tasks in seconds</h4>
+            <p data-i18n="featuresPage.tasks.createDesc">Hit Ctrl+Shift+T or click the + button. Add title, set priority, pick deadline. Done.</p>
+          </div>
+
+          <div class="feature-block">
+            <h4 data-i18n="featuresPage.tasks.priority">Priority levels that make sense</h4>
+            <ul class="priority-list">
+              <li><span class="priority-dot high"></span> <span data-i18n="featuresPage.tasks.p1">High — Do today</span></li>
+              <li><span class="priority-dot medium"></span> <span data-i18n="featuresPage.tasks.p2">Medium — This week</span></li>
+              <li><span class="priority-dot low"></span> <span data-i18n="featuresPage.tasks.p3">Low — When possible</span></li>
+            </ul>
+          </div>
+
+          <div class="feature-block">
+            <h4 data-i18n="featuresPage.tasks.filter">Smart filtering</h4>
+            <p data-i18n="featuresPage.tasks.filterDesc">View all, or filter by status (pending/completed), priority level, or due date (overdue/today/upcoming).</p>
+          </div>
+
+          <div class="specs-box">
+            <div class="spec-item"><strong>Storage:</strong> Unlimited tasks</div>
+            <div class="spec-item"><strong>Sync:</strong> Real-time to Notion</div>
+            <div class="spec-item"><strong>Shortcut:</strong> Ctrl+Shift+T</div>
+            <div class="spec-item"><strong>Offline:</strong> Full functionality</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Smart Bookmarks (Deep dive) -->
+  <section class="feature-section alt" id="bookmarks">
+    <div class="container">
+      <div class="feature-detail reverse">
+        <div class="feature-detail-content">
+          <h2 data-i18n="featuresPage.bookmarks.title">Smart Bookmarks</h2>
+          <p class="feature-tagline" data-i18n="featuresPage.bookmarks.tagline">Save now. Find later. Actually.</p>
+
+          <div class="feature-block">
+            <h4 data-i18n="featuresPage.bookmarks.oneClick">One-click save</h4>
+            <p data-i18n="featuresPage.bookmarks.oneClickDesc">Click the bookmark icon or drag any URL to the sidebar. We fetch the rest automatically.</p>
+          </div>
+
+          <div class="feature-block">
+            <h4 data-i18n="featuresPage.bookmarks.metadata">Auto-fetched metadata</h4>
+            <ul class="check-list">
+              <li data-i18n="featuresPage.bookmarks.m1">Page title</li>
+              <li data-i18n="featuresPage.bookmarks.m2">Meta description</li>
+              <li data-i18n="featuresPage.bookmarks.m3">Featured image</li>
+              <li data-i18n="featuresPage.bookmarks.m4">URL and domain</li>
+            </ul>
+          </div>
+
+          <div class="feature-block">
+            <h4 data-i18n="featuresPage.bookmarks.organize">Organization that scales</h4>
+            <p data-i18n="featuresPage.bookmarks.organizeDesc">Create categories: Work, Personal, Research, Ideas. Add tags: #urgent #read-later #reference. Search across everything.</p>
+          </div>
+
+          <div class="specs-box">
+            <div class="spec-item"><strong>Storage:</strong> Unlimited bookmarks</div>
+            <div class="spec-item"><strong>Metadata:</strong> Auto-fetched</div>
+            <div class="spec-item"><strong>Search:</strong> Title, URL, tags</div>
+            <div class="spec-item"><strong>Export:</strong> To Notion database</div>
+          </div>
+        </div>
+        <div class="feature-detail-image">
+          <div class="image-placeholder">
+            <span>Bookmarks Screenshot</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Quick Notes (Deep dive) -->
+  <section class="feature-section" id="notes">
+    <div class="container">
+      <div class="feature-detail">
+        <div class="feature-detail-image">
+          <div class="image-placeholder">
+            <span>Notes Screenshot</span>
+          </div>
+        </div>
+        <div class="feature-detail-content">
+          <h2 data-i18n="featuresPage.notes.title">Quick Notes</h2>
+          <p class="feature-tagline" data-i18n="featuresPage.notes.tagline">From thought to text in 2 seconds.</p>
+
+          <div class="feature-block">
+            <h4 data-i18n="featuresPage.notes.markdown">Markdown-powered</h4>
+            <p data-i18n="featuresPage.notes.markdownDesc">Write in markdown, see formatted preview. Headers, lists, code blocks, links — all supported.</p>
+          </div>
+
+          <div class="feature-block">
+            <h4 data-i18n="featuresPage.notes.context">Context-aware capture</h4>
+            <p data-i18n="featuresPage.notes.contextDesc">Notes automatically link to the page where you created them. Never forget the source.</p>
+          </div>
+
+          <div class="feature-block">
+            <h4 data-i18n="featuresPage.notes.highlight">Highlight to capture</h4>
+            <p data-i18n="featuresPage.notes.highlightDesc">Select text → Right-click → "Save to Focus Notes". Quote saved with source URL.</p>
+          </div>
+
+          <div class="markdown-table">
+            <table>
+              <thead>
+                <tr>
+                  <th data-i18n="featuresPage.notes.syntax">Syntax</th>
+                  <th data-i18n="featuresPage.notes.result">Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><code>**bold**</code></td><td><strong>bold</strong></td></tr>
+                <tr><td><code>*italic*</code></td><td><em>italic</em></td></tr>
+                <tr><td><code>`code`</code></td><td><code>code</code></td></tr>
+                <tr><td><code>- list item</code></td><td>• list item</td></tr>
+                <tr><td><code>[link](url)</code></td><td><a href="#">link</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="specs-box">
+            <div class="spec-item"><strong>Format:</strong> Markdown</div>
+            <div class="spec-item"><strong>Search:</strong> Full-text</div>
+            <div class="spec-item"><strong>Link:</strong> Auto to source page</div>
+            <div class="spec-item"><strong>Shortcut:</strong> Ctrl+Shift+N</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: AI Prompts Library (Deep dive) -->
+  <section class="feature-section alt" id="prompts">
+    <div class="container">
+      <div class="feature-detail reverse">
+        <div class="feature-detail-content">
+          <h2 data-i18n="featuresPage.prompts.title">AI Prompts Library</h2>
+          <p class="feature-tagline" data-i18n="featuresPage.prompts.tagline">Your best prompts, always one click away.</p>
+
+          <div class="feature-block">
+            <h4 data-i18n="featuresPage.prompts.stop">Stop rewriting the same prompts</h4>
+            <p data-i18n="featuresPage.prompts.stopDesc">Save prompts that work. Organize by use case. Use them across ChatGPT, Claude, Gemini — anywhere.</p>
+          </div>
+
+          <div class="feature-block">
+            <h4 data-i18n="featuresPage.prompts.copy">One-click copy</h4>
+            <p data-i18n="featuresPage.prompts.copyDesc">Click any prompt to copy to clipboard. Paste into your AI tool of choice.</p>
+          </div>
+
+          <div class="feature-block">
+            <h4 data-i18n="featuresPage.prompts.categories">Category organization</h4>
+            <ul class="check-list">
+              <li data-i18n="featuresPage.prompts.c1">Writing prompts</li>
+              <li data-i18n="featuresPage.prompts.c2">Coding assistants</li>
+              <li data-i18n="featuresPage.prompts.c3">Research queries</li>
+              <li data-i18n="featuresPage.prompts.c4">Custom categories</li>
+            </ul>
+          </div>
+
+          <div class="prompt-examples">
+            <div class="prompt-card">
+              <span class="prompt-icon">📝</span>
+              <span class="prompt-title" data-i18n="featuresPage.prompts.ex1">Blog Post Outline</span>
+            </div>
+            <div class="prompt-card">
+              <span class="prompt-icon">💻</span>
+              <span class="prompt-title" data-i18n="featuresPage.prompts.ex2">Code Review</span>
+            </div>
+            <div class="prompt-card">
+              <span class="prompt-icon">🔍</span>
+              <span class="prompt-title" data-i18n="featuresPage.prompts.ex3">Research Summary</span>
+            </div>
+          </div>
+        </div>
+        <div class="feature-detail-image">
+          <div class="image-placeholder">
+            <span>Prompts Screenshot</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Notion Integration (Deep dive) -->
+  <section class="feature-section" id="sync">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n="featuresPage.sync.title">Two-Way Notion Sync</h2>
+        <p data-i18n="featuresPage.sync.subtitle">Your browser extension and Notion workspace, perfectly synchronized.</p>
+      </div>
+
+      <div class="sync-architecture">
+        <div class="sync-box-large">
+          <div class="sync-label">Focus to Notion Extension</div>
+          <ul>
+            <li>• Tasks</li>
+            <li>• Bookmarks</li>
+            <li>• Notes</li>
+            <li>• Prompts</li>
+          </ul>
+        </div>
+        <div class="sync-connector">
+          <svg width="100" height="60" viewBox="0 0 100 60">
+            <path d="M10 30 L90 30" stroke="var(--brand)" stroke-width="3" stroke-dasharray="8 4"/>
+            <path d="M75 15 L90 30 L75 45" fill="none" stroke="var(--brand)" stroke-width="3"/>
+            <path d="M25 15 L10 30 L25 45" fill="none" stroke="var(--brand)" stroke-width="3"/>
+          </svg>
+          <span class="connector-label">API</span>
+        </div>
+        <div class="sync-box-large">
+          <div class="sync-label">Notion Workspace</div>
+          <ul>
+            <li>• Tasks Database</li>
+            <li>• Bookmarks DB</li>
+            <li>• Notes DB</li>
+            <li>• Prompts DB</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sync-steps">
+        <h4 data-i18n="featuresPage.sync.howItWorks">How it works:</h4>
+        <ol>
+          <li data-i18n="featuresPage.sync.step1">Connect your Notion workspace (one-time setup)</li>
+          <li data-i18n="featuresPage.sync.step2">Extension creates databases automatically</li>
+          <li data-i18n="featuresPage.sync.step3">Every 5 minutes, or on-demand sync</li>
+          <li data-i18n="featuresPage.sync.step4">Changes flow both directions</li>
+        </ol>
+      </div>
+
+      <div class="sync-conflict">
+        <h4 data-i18n="featuresPage.sync.conflict">Conflict resolution</h4>
+        <p data-i18n="featuresPage.sync.conflictDesc">When the same item is edited in both places: Most recent edit wins. Notification shown for conflicts. Manual resolution option available.</p>
+      </div>
+
+      <a href="install.html" class="btn btn-primary" data-i18n="featuresPage.sync.cta">See Installation Guide →</a>
+    </div>
+  </section>
+
+  <!-- Section 7: Offline-First Architecture (Deep dive) -->
+  <section class="feature-section alt" id="offline">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n="featuresPage.offline.title">Offline-First Design</h2>
+        <p data-i18n="featuresPage.offline.subtitle">Built for reliability, not just connectivity.</p>
+      </div>
+
+      <div class="offline-diagram">
+        <div class="diagram-wrapper">
+          <div class="diagram-browser">
+            <div class="diagram-title" data-i18n="featuresPage.offline.browser">Your Browser</div>
+            <div class="diagram-extension">
+              <div class="diagram-label">Focus to Notion Extension</div>
+              <div class="diagram-layers">
+                <div class="layer">UI Layer</div>
+                <div class="layer">Sync Engine</div>
+              </div>
+              <div class="diagram-storage">
+                <div class="storage-label">IndexedDB Storage</div>
+                <div class="storage-items">(Tasks, Bookmarks, Notes, Prompts)</div>
+              </div>
+            </div>
+          </div>
+          <div class="diagram-arrow">↓ <span data-i18n="featuresPage.offline.whenOnline">(when online)</span></div>
+          <div class="diagram-notion">Notion API</div>
+        </div>
+      </div>
+
+      <div class="offline-benefits">
+        <h4 data-i18n="featuresPage.offline.whatThisMeans">What this means for you:</h4>
+        <ul class="benefits-grid">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong data-i18n="featuresPage.offline.b1">Instant load</strong> — <span data-i18n="featuresPage.offline.b1Desc">Data from local storage, not network</span></span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong data-i18n="featuresPage.offline.b2">Works offline</strong> — <span data-i18n="featuresPage.offline.b2Desc">Create, edit, delete without internet</span></span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong data-i18n="featuresPage.offline.b3">No data loss</strong> — <span data-i18n="featuresPage.offline.b3Desc">Everything persisted locally first</span></span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong data-i18n="featuresPage.offline.b4">Privacy-first</strong> — <span data-i18n="featuresPage.offline.b4Desc">Data lives in YOUR browser</span></span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong data-i18n="featuresPage.offline.b5">Fast sync</strong> — <span data-i18n="featuresPage.offline.b5Desc">Only changes sent to Notion</span></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: Keyboard Shortcuts Reference -->
+  <section class="feature-section" id="shortcuts">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n="featuresPage.shortcuts.title">Keyboard Shortcuts</h2>
+        <p data-i18n="featuresPage.shortcuts.subtitle">Power users, this is for you.</p>
+      </div>
+
+      <div class="shortcuts-table">
+        <table>
+          <thead>
+            <tr>
+              <th data-i18n="featuresPage.shortcuts.shortcut">Shortcut</th>
+              <th data-i18n="featuresPage.shortcuts.action">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd></td><td data-i18n="featuresPage.shortcuts.s1">Toggle sidebar</td></tr>
+            <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd></td><td data-i18n="featuresPage.shortcuts.s2">New task</td></tr>
+            <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd></td><td data-i18n="featuresPage.shortcuts.s3">Bookmark current page</td></tr>
+            <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>N</kbd></td><td data-i18n="featuresPage.shortcuts.s4">New note</td></tr>
+            <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></td><td data-i18n="featuresPage.shortcuts.s5">Open prompts library</td></tr>
+            <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></td><td data-i18n="featuresPage.shortcuts.s6">Force sync to Notion</td></tr>
+            <tr><td><kbd>Esc</kbd></td><td data-i18n="featuresPage.shortcuts.s7">Close sidebar</td></tr>
+          </tbody>
+        </table>
+
+        <h4 data-i18n="featuresPage.shortcuts.editor">Inside editor:</h4>
+        <table>
+          <tbody>
+            <tr><td><kbd>Ctrl</kbd>+<kbd>B</kbd></td><td data-i18n="featuresPage.shortcuts.e1">Bold</td></tr>
+            <tr><td><kbd>Ctrl</kbd>+<kbd>I</kbd></td><td data-i18n="featuresPage.shortcuts.e2">Italic</td></tr>
+            <tr><td><kbd>Ctrl</kbd>+<kbd>K</kbd></td><td data-i18n="featuresPage.shortcuts.e3">Insert link</td></tr>
+            <tr><td><kbd>Ctrl</kbd>+<kbd>Enter</kbd></td><td data-i18n="featuresPage.shortcuts.e4">Save and close</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 9: Feature Comparison -->
+  <section class="feature-section alt" id="comparison">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n="featuresPage.compare.title">How Focus to Notion Compares</h2>
+      </div>
+
+      <div class="comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th data-i18n="featuresPage.compare.feature">Feature</th>
+              <th class="highlight">Focus to Notion</th>
+              <th>Pocket</th>
+              <th>Raindrop</th>
+              <th>Notion Clipper</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-i18n="featuresPage.compare.f1">Browser sidebar</td>
+              <td class="highlight">✅</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+            </tr>
+            <tr>
+              <td data-i18n="featuresPage.compare.f2">Task management</td>
+              <td class="highlight">✅</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+            </tr>
+            <tr>
+              <td data-i18n="featuresPage.compare.f3">Bookmarks</td>
+              <td class="highlight">✅</td>
+              <td>✅</td>
+              <td>✅</td>
+              <td>✅</td>
+            </tr>
+            <tr>
+              <td data-i18n="featuresPage.compare.f4">Notes</td>
+              <td class="highlight">✅</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>✅</td>
+            </tr>
+            <tr>
+              <td data-i18n="featuresPage.compare.f5">AI Prompts library</td>
+              <td class="highlight">✅</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+            </tr>
+            <tr>
+              <td data-i18n="featuresPage.compare.f6">Notion sync</td>
+              <td class="highlight">✅</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>✅</td>
+            </tr>
+            <tr>
+              <td data-i18n="featuresPage.compare.f7">Two-way sync</td>
+              <td class="highlight">✅</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+            </tr>
+            <tr>
+              <td data-i18n="featuresPage.compare.f8">Offline-first</td>
+              <td class="highlight">✅</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+            </tr>
+            <tr>
+              <td data-i18n="featuresPage.compare.f9">Free tier</td>
+              <td class="highlight">✅</td>
+              <td data-i18n="featuresPage.compare.limited">Limited</td>
+              <td data-i18n="featuresPage.compare.limited">Limited</td>
+              <td>✅</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 10: CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2 data-i18n="featuresPage.cta.title">Ready to see it in action?</h2>
+      <div class="cta-actions">
+        <a href="https://chromewebstore.google.com/detail/focus-to-notion" class="btn btn-primary btn-lg" target="_blank">
+          <span data-i18n="featuresPage.cta.install">Install Free — Takes 30 seconds</span>
+        </a>
+        <a href="install.html" class="btn btn-outline btn-lg">
+          <span data-i18n="featuresPage.cta.guide">Read Installation Guide</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Focus to Notion" width="32" onerror="this.style.display='none'">
+            <span>Focus to Notion</span>
+          </a>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="features.html" data-i18n="footer.features">Features</a></li>
+          <li><a href="index.html#use-cases" data-i18n="footer.useCases">Use Cases</a></li>
+          <li><a href="install.html" data-i18n="footer.install">Installation</a></li>
+        </ul>
+
+        <ul class="footer-links">
+          <li><a href="mailto:contact@binhvuong.vn" data-i18n="footer.contact">Contact</a></li>
+          <li><a href="https://github.com/vuongnguyenbinh/NotionEX" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 Focus to Notion. <span data-i18n="footer.madeIn">Made with ☕ in Vietnam.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
+</body>
+</html>

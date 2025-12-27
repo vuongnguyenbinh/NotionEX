@@ -2,7 +2,16 @@
   "permissions": {
     "allow": [
       "Skill(planning)",
-      "Bash(git init:*)"
+      "Bash(git init:*)",
+      "Bash(git config:*)",
+      "Bash(gh auth status:*)",
+      "Bash(node:*)",
+      "WebFetch(domain:developer.chrome.com)",
+      "WebFetch(domain:binhvuong.vn)",
+      "Bash(gemini --help:*)",
+      "Bash(git show:*)",
+      "Bash(cat:*)",
+      "Bash(git add:*)"
     ]
   }
 }

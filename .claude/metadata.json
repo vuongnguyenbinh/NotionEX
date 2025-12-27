@@ -1,0 +1,142 @@
+{
+  "vibery_kits": {
+    "landing-page-pro": {
+      "version": "1.0.0",
+      "installedAt": "2025-12-27T02:07:37.064026",
+      "files": [
+        {
+          "path": "tailwind-pro.md",
+          "checksum": "0b438e3cedebf21c",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "nextjs-developer.md",
+          "checksum": "7601d12a573a562f",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "seo-specialist.md",
+          "checksum": "cb09bfb233594171",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "ui-ux-pro-max/SKILL.md",
+          "checksum": "08d51dd0c82b564e",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "ui-ux-pro-max/scripts/core.py",
+          "checksum": "eb919bff938ad33d",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "ui-ux-pro-max/scripts/search.py",
+          "checksum": "58bbf53e728b5b17",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "ui-ux-pro-max/data/ux-guidelines.csv",
+          "checksum": "1870ee048f2a2bdd",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "ui-ux-pro-max/data/typography.csv",
+          "checksum": "6c0cd9db74f75d38",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "ui-ux-pro-max/data/colors.csv",
+          "checksum": "bd1fd6cf7d93408c",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "ui-ux-pro-max/data/styles.csv",
+          "checksum": "899a7c3a7b07a16d",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "ui-ux-pro-max/data/charts.csv",
+          "checksum": "3b0cc1b287ad48d6",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "ui-ux-pro-max/data/products.csv",
+          "checksum": "5359e3037dcb84e9",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "ui-ux-pro-max/data/prompts.csv",
+          "checksum": "0f5acb17260f64fc",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "ui-ux-pro-max/data/landing.csv",
+          "checksum": "7ac095129592c6c9",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "ui-ux-pro-max/data/stacks/react.csv",
+          "checksum": "b6e3eb0e4c9c01bd",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "ui-ux-pro-max/data/stacks/html-tailwind.csv",
+          "checksum": "d2a00672f4eeed89",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "ui-ux-pro-max/data/stacks/svelte.csv",
+          "checksum": "bc8d158994a8bdf4",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "ui-ux-pro-max/data/stacks/flutter.csv",
+          "checksum": "e470e6bc2bcd8562",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "ui-ux-pro-max/data/stacks/vue.csv",
+          "checksum": "9b793c3f4eec85f7",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "ui-ux-pro-max/data/stacks/react-native.csv",
+          "checksum": "a08ca77fcf6b6d95",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "ui-ux-pro-max/data/stacks/nextjs.csv",
+          "checksum": "06a8e8c13bd44696",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        },
+        {
+          "path": "ui-ux-pro-max/data/stacks/swiftui.csv",
+          "checksum": "e87cb9eee208bb75",
+          "ownership": "kit",
+          "kit": "landing-page-pro"
+        }
+      ]
+    }
+  }
+}

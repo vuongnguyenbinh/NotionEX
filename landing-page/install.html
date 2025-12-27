@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Installation Guide - Focus to Notion</title>
+  <meta name="description" content="Get started with Focus to Notion in 5 minutes. From install to your first synced task — we'll guide you through every step.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="Focus to Notion" onerror="this.style.display='none'">
+          <span>Focus to Notion</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="features.html" data-i18n="nav.features">Features</a></li>
+          <li><a href="install.html" class="active" data-i18n="nav.guide">Install</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <div class="lang-toggle">
+            <button onclick="setLang('en')" id="langEn" class="active">EN</button>
+            <button onclick="setLang('vi')" id="langVi">VI</button>
+          </div>
+          <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/>
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+          </button>
+          <a href="https://chromewebstore.google.com/detail/focus-to-notion" class="btn btn-primary" target="_blank" data-i18n="nav.install">Install Free</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section 1: Hero with Progress Indicator -->
+  <section class="install-hero">
+    <div class="container">
+      <h1 data-i18n="install.hero.title">Get Started in 5 Minutes</h1>
+      <p class="install-hero-subtitle" data-i18n="install.hero.subtitle">From install to your first synced task — we'll guide you through every step.</p>
+
+      <div class="progress-indicator">
+        <div class="progress-step" data-step="1">
+          <div class="progress-circle">1</div>
+          <span data-i18n="install.progress.install">Install Extension</span>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="2">
+          <div class="progress-circle">2</div>
+          <span data-i18n="install.progress.setup">Initial Setup</span>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="3">
+          <div class="progress-circle">3</div>
+          <span data-i18n="install.progress.notion">Connect Notion</span>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="4">
+          <div class="progress-circle">4</div>
+          <span data-i18n="install.progress.use">Start Using</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Prerequisites Check -->
+  <section class="prerequisites">
+    <div class="container">
+      <h2 data-i18n="install.prereq.title">Before You Start</h2>
+      <p class="section-subtitle" data-i18n="install.prereq.subtitle">Make sure you have everything ready</p>
+
+      <div class="prereq-grid">
+        <div class="prereq-item checked">
+          <div class="prereq-check">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20,6 9,17 4,12"/>
+            </svg>
+          </div>
+          <div class="prereq-content">
+            <h4 data-i18n="install.prereq.browser.title">Chrome, Edge, or Brave browser</h4>
+            <p data-i18n="install.prereq.browser.desc">Version 88 or higher</p>
+            <a href="chrome://settings/help" class="prereq-link" data-i18n="install.prereq.browser.link">Check your version →</a>
+          </div>
+        </div>
+
+        <div class="prereq-item checked">
+          <div class="prereq-check">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20,6 9,17 4,12"/>
+            </svg>
+          </div>
+          <div class="prereq-content">
+            <h4 data-i18n="install.prereq.notion.title">Notion account (for sync)</h4>
+            <p data-i18n="install.prereq.notion.desc">Free or paid — both work</p>
+            <a href="https://notion.so/signup" target="_blank" class="prereq-link" data-i18n="install.prereq.notion.link">Create Notion account →</a>
+          </div>
+        </div>
+
+        <div class="prereq-item">
+          <div class="prereq-check empty">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+            </svg>
+          </div>
+          <div class="prereq-content">
+            <h4 data-i18n="install.prereq.time.title">5 minutes of your time</h4>
+            <p data-i18n="install.prereq.time.desc">That's all you need</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <div class="info-icon">💡</div>
+        <p data-i18n="install.prereq.note">Don't have Notion? You can still use the extension. All features work locally. Add Notion sync later anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Step 1 - Install Extension -->
+  <section class="install-step" id="step1">
+    <div class="container">
+      <div class="step-header">
+        <div class="step-badge">Step 1</div>
+        <span class="step-time" data-i18n="install.step1.time">~1 minute</span>
+      </div>
+      <h2 data-i18n="install.step1.title">Install the Extension</h2>
+
+      <div class="install-steps">
+        <div class="install-instruction">
+          <div class="instruction-number">1</div>
+          <div class="instruction-content">
+            <p data-i18n="install.step1.i1">Click the button below to open Chrome Web Store</p>
+            <a href="https://chromewebstore.google.com/detail/focus-to-notion" class="btn btn-primary btn-lg mt-3" target="_blank">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="4"/>
+              </svg>
+              Open Chrome Web Store
+            </a>
+          </div>
+        </div>
+
+        <div class="install-instruction">
+          <div class="instruction-number">2</div>
+          <div class="instruction-content">
+            <p data-i18n="install.step1.i2">Click "Add to Chrome"</p>
+            <div class="screenshot-placeholder">
+              <span>Screenshot: Chrome Web Store "Add to Chrome" button</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="install-instruction">
+          <div class="instruction-number">3</div>
+          <div class="instruction-content">
+            <p data-i18n="install.step1.i3">Confirm by clicking "Add extension" in the popup</p>
+          </div>
+        </div>
+
+        <div class="install-instruction">
+          <div class="instruction-number">4</div>
+          <div class="instruction-content">
+            <p data-i18n="install.step1.i4">You'll see the Focus to Notion icon in your toolbar</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="success-indicator">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="20,6 9,17 4,12"/>
+        </svg>
+        <span data-i18n="install.step1.success">Extension installed!</span>
+      </div>
+
+      <!-- Troubleshooting accordion -->
+      <div class="troubleshoot-accordion">
+        <details>
+          <summary data-i18n="install.step1.trouble1.q">"Add to Chrome" button is greyed out</summary>
+          <div class="accordion-content">
+            <ul>
+              <li data-i18n="install.step1.trouble1.a1">Make sure you're signed into Chrome</li>
+              <li data-i18n="install.step1.trouble1.a2">Check if your organization allows extensions</li>
+            </ul>
+          </div>
+        </details>
+        <details>
+          <summary data-i18n="install.step1.trouble2.q">Extension not appearing in toolbar</summary>
+          <div class="accordion-content">
+            <p data-i18n="install.step1.trouble2.a">Click the puzzle icon → Pin Focus to Notion</p>
+          </div>
+        </details>
+        <details>
+          <summary data-i18n="install.step1.trouble3.q">Using Edge or Brave?</summary>
+          <div class="accordion-content">
+            <p data-i18n="install.step1.trouble3.a">Same process, Chrome Web Store works on both browsers</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Step 2 - First Launch -->
+  <section class="install-step alt-bg" id="step2">
+    <div class="container">
+      <div class="step-header">
+        <div class="step-badge">Step 2</div>
+        <span class="step-time" data-i18n="install.step2.time">~1 minute</span>
+      </div>
+      <h2 data-i18n="install.step2.title">Open & Explore</h2>
+
+      <div class="install-steps">
+        <div class="install-instruction">
+          <div class="instruction-number">1</div>
+          <div class="instruction-content">
+            <p data-i18n="install.step2.i1">Click the Focus to Notion icon in your toolbar</p>
+            <p class="text-muted">Or press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd> (<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd> on Mac)</p>
+          </div>
+        </div>
+
+        <div class="install-instruction">
+          <div class="instruction-number">2</div>
+          <div class="instruction-content">
+            <p data-i18n="install.step2.i2">You'll see the sidebar with 4 tabs:</p>
+            <div class="tabs-preview">
+              <div class="tab-item">
+                <span class="tab-icon">📋</span>
+                <span class="tab-name" data-i18n="install.step2.tab1">Tasks</span>
+                <span class="tab-desc" data-i18n="install.step2.tab1.desc">Your to-do list</span>
+              </div>
+              <div class="tab-item">
+                <span class="tab-icon">🔖</span>
+                <span class="tab-name" data-i18n="install.step2.tab2">Bookmarks</span>
+                <span class="tab-desc" data-i18n="install.step2.tab2.desc">Saved pages</span>
+              </div>
+              <div class="tab-item">
+                <span class="tab-icon">📝</span>
+                <span class="tab-name" data-i18n="install.step2.tab3">Notes</span>
+                <span class="tab-desc" data-i18n="install.step2.tab3.desc">Quick capture</span>
+              </div>
+              <div class="tab-item">
+                <span class="tab-icon">🤖</span>
+                <span class="tab-name" data-i18n="install.step2.tab4">Prompts</span>
+                <span class="tab-desc" data-i18n="install.step2.tab4.desc">AI prompt library</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="install-instruction">
+          <div class="instruction-number">3</div>
+          <div class="instruction-content">
+            <p data-i18n="install.step2.i3">Try creating your first item:</p>
+            <ul class="action-list">
+              <li data-i18n="install.step2.i3a">Click the + button in Tasks tab</li>
+              <li data-i18n="install.step2.i3b">Type "Test my new extension"</li>
+              <li data-i18n="install.step2.i3c">Click Save</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="success-indicator">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="20,6 9,17 4,12"/>
+        </svg>
+        <span data-i18n="install.step2.success">You've created your first task!</span>
+      </div>
+
+      <div class="info-box">
+        <div class="info-icon">ℹ️</div>
+        <p data-i18n="install.step2.note">At this point, everything is stored locally. Your data is safe even without Notion connected.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Step 3 - Connect Notion -->
+  <section class="install-step" id="step3">
+    <div class="container">
+      <div class="step-header">
+        <div class="step-badge">Step 3</div>
+        <span class="step-time" data-i18n="install.step3.time">~3 minutes</span>
+      </div>
+      <h2 data-i18n="install.step3.title">Connect Your Notion Workspace</h2>
+      <p class="step-intro" data-i18n="install.step3.intro">This is where the magic happens. Let's connect your extension to Notion.</p>
+
+      <div class="substep-grid">
+        <div class="substep">
+          <h4 data-i18n="install.step3.sub1.title">3.1 Open Settings</h4>
+          <ol>
+            <li data-i18n="install.step3.sub1.i1">In the extension sidebar, click the ⚙️ icon</li>
+            <li data-i18n="install.step3.sub1.i2">Click "Connect Notion"</li>
+          </ol>
+        </div>
+
+        <div class="substep">
+          <h4 data-i18n="install.step3.sub2.title">3.2 Authorize Access</h4>
+          <ol>
+            <li data-i18n="install.step3.sub2.i1">A Notion popup will appear</li>
+            <li data-i18n="install.step3.sub2.i2">Select the workspace you want to use</li>
+            <li data-i18n="install.step3.sub2.i3">Click "Allow access"</li>
+          </ol>
+          <div class="warning-box">
+            <strong>⚠️</strong>
+            <span data-i18n="install.step3.sub2.warning">Select a workspace where you have edit permissions. If you're part of a team workspace, you may need admin approval.</span>
+          </div>
+        </div>
+
+        <div class="substep">
+          <h4 data-i18n="install.step3.sub3.title">3.3 Create Databases (Automatic)</h4>
+          <p data-i18n="install.step3.sub3.intro">Once authorized, the extension will:</p>
+          <ol>
+            <li data-i18n="install.step3.sub3.i1">Create a "Focus to Notion" page in your workspace</li>
+            <li data-i18n="install.step3.sub3.i2">Add 4 databases inside:</li>
+          </ol>
+          <div class="db-progress">
+            <div class="db-item done">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+              <span>Tasks Database</span>
+            </div>
+            <div class="db-item done">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+              <span>Bookmarks Database</span>
+            </div>
+            <div class="db-item done">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+              <span>Notes Database</span>
+            </div>
+            <div class="db-item done">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+              <span>Prompts Database</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="substep">
+          <h4 data-i18n="install.step3.sub4.title">3.4 Verify Connection</h4>
+          <ol>
+            <li data-i18n="install.step3.sub4.i1">Go to your Notion workspace</li>
+            <li data-i18n="install.step3.sub4.i2">Find the "Focus to Notion" page</li>
+            <li data-i18n="install.step3.sub4.i3">You should see your test task synced!</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="success-indicator large">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="20,6 9,17 4,12"/>
+        </svg>
+        <span data-i18n="install.step3.success">Notion connected and syncing!</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Step 4 - Configure Sync Settings -->
+  <section class="install-step alt-bg" id="step4">
+    <div class="container">
+      <div class="step-header">
+        <div class="step-badge">Step 4</div>
+        <span class="step-time" data-i18n="install.step4.time">~1 minute</span>
+      </div>
+      <h2 data-i18n="install.step4.title">Customize Your Sync</h2>
+      <p class="step-intro" data-i18n="install.step4.intro">Fine-tune how sync works for you.</p>
+
+      <div class="config-grid">
+        <div class="config-card">
+          <h4 data-i18n="install.step4.freq.title">Sync Frequency</h4>
+          <p class="text-muted" data-i18n="install.step4.freq.location">In Settings → Sync Options:</p>
+          <div class="radio-options">
+            <div class="radio-option">
+              <input type="radio" name="sync-freq" id="realtime">
+              <label for="realtime">
+                <strong data-i18n="install.step4.freq.realtime">Real-time (instant sync)</strong>
+                <span data-i18n="install.step4.freq.realtime.desc">Best for: Always-online users</span>
+              </label>
+            </div>
+            <div class="radio-option selected">
+              <input type="radio" name="sync-freq" id="interval" checked>
+              <label for="interval">
+                <strong data-i18n="install.step4.freq.interval">Every 5 minutes (default)</strong>
+                <span data-i18n="install.step4.freq.interval.desc">Best for: Most users</span>
+              </label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="sync-freq" id="manual">
+              <label for="manual">
+                <strong data-i18n="install.step4.freq.manual">Manual only</strong>
+                <span data-i18n="install.step4.freq.manual.desc">Best for: Offline-heavy users</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="config-card">
+          <h4 data-i18n="install.step4.mapping.title">What Syncs Where</h4>
+          <div class="sync-mapping-table">
+            <table>
+              <thead>
+                <tr>
+                  <th data-i18n="install.step4.mapping.ext">Extension</th>
+                  <th data-i18n="install.step4.mapping.notion">Notion Database</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Task title</td><td>Name property</td></tr>
+                <tr><td>Task priority</td><td>Select (High/Med/Low)</td></tr>
+                <tr><td>Task deadline</td><td>Date property</td></tr>
+                <tr><td>Task status</td><td>Checkbox property</td></tr>
+                <tr><td>Bookmark URL</td><td>URL property</td></tr>
+                <tr><td>Bookmark tags</td><td>Multi-select property</td></tr>
+                <tr><td>Note content</td><td>Page content (blocks)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="config-card full-width">
+          <h4 data-i18n="install.step4.indicators.title">Sync Status Indicators</h4>
+          <p class="text-muted mb-3" data-i18n="install.step4.indicators.desc">Look for these icons in the extension:</p>
+          <div class="status-icons">
+            <div class="status-item">
+              <span class="status-dot synced"></span>
+              <span data-i18n="install.step4.status.synced">Synced — Everything up to date</span>
+            </div>
+            <div class="status-item">
+              <span class="status-dot syncing"></span>
+              <span data-i18n="install.step4.status.syncing">Syncing — Transfer in progress</span>
+            </div>
+            <div class="status-item">
+              <span class="status-dot offline"></span>
+              <span data-i18n="install.step4.status.offline">Offline — Will sync when online</span>
+            </div>
+            <div class="status-item">
+              <span class="status-dot conflict"></span>
+              <span data-i18n="install.step4.status.conflict">Conflict — Needs attention</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: First Workflow - Quick Start Guide -->
+  <section class="install-step workflow-section" id="workflow">
+    <div class="container">
+      <h2 data-i18n="install.workflow.title">Try Your First Workflow</h2>
+      <p class="section-subtitle" data-i18n="install.workflow.subtitle">Let's put it all together with a real example.</p>
+
+      <div class="scenario-card">
+        <h3 data-i18n="install.workflow.scenario.title">Scenario: Research a Topic</h3>
+
+        <div class="workflow-steps">
+          <div class="workflow-step">
+            <div class="workflow-step-header">
+              <span class="workflow-step-num">1</span>
+              <h4 data-i18n="install.workflow.s1.title">Open any article you want to save</h4>
+            </div>
+            <p class="text-muted" data-i18n="install.workflow.s1.desc">Example: Open a blog post about productivity</p>
+          </div>
+
+          <div class="workflow-step">
+            <div class="workflow-step-header">
+              <span class="workflow-step-num">2</span>
+              <h4 data-i18n="install.workflow.s2.title">Bookmark it</h4>
+            </div>
+            <ul class="workflow-actions">
+              <li data-i18n="install.workflow.s2.a1">Click 🔖 tab → Click +</li>
+              <li data-i18n="install.workflow.s2.a2">Or drag the URL to sidebar</li>
+              <li data-i18n="install.workflow.s2.a3">Add category: "Research"</li>
+              <li data-i18n="install.workflow.s2.a4">Add tags: #productivity #read-later</li>
+            </ul>
+          </div>
+
+          <div class="workflow-step">
+            <div class="workflow-step-header">
+              <span class="workflow-step-num">3</span>
+              <h4 data-i18n="install.workflow.s3.title">Take a note</h4>
+            </div>
+            <ul class="workflow-actions">
+              <li data-i18n="install.workflow.s3.a1">Highlight interesting text on the page</li>
+              <li data-i18n="install.workflow.s3.a2">Right-click → "Save to Focus Notes"</li>
+              <li data-i18n="install.workflow.s3.a3">Or: Click 📝 tab → Click +</li>
+              <li data-i18n="install.workflow.s3.a4">Write your thoughts in markdown</li>
+            </ul>
+          </div>
+
+          <div class="workflow-step">
+            <div class="workflow-step-header">
+              <span class="workflow-step-num">4</span>
+              <h4 data-i18n="install.workflow.s4.title">Create follow-up task</h4>
+            </div>
+            <ul class="workflow-actions">
+              <li data-i18n="install.workflow.s4.a1">Click 📋 tab → Click +</li>
+              <li data-i18n="install.workflow.s4.a2">Title: "Review productivity article insights"</li>
+              <li data-i18n="install.workflow.s4.a3">Priority: Medium</li>
+              <li data-i18n="install.workflow.s4.a4">Deadline: Tomorrow</li>
+            </ul>
+          </div>
+
+          <div class="workflow-step">
+            <div class="workflow-step-header">
+              <span class="workflow-step-num">5</span>
+              <h4 data-i18n="install.workflow.s5.title">Check Notion</h4>
+            </div>
+            <ul class="workflow-actions">
+              <li data-i18n="install.workflow.s5.a1">Open your Notion workspace</li>
+              <li data-i18n="install.workflow.s5.a2">All 3 items should appear in their databases</li>
+              <li data-i18n="install.workflow.s5.a3">Try editing in Notion — watch it sync back!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="celebration-box">
+        <span class="celebration-icon">🎉</span>
+        <div class="celebration-content">
+          <h4 data-i18n="install.workflow.congrats.title">Congratulations!</h4>
+          <p data-i18n="install.workflow.congrats.desc">You're now a Focus to Notion power user.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: Advanced Configuration -->
+  <section class="install-step alt-bg" id="advanced">
+    <div class="container">
+      <h2 data-i18n="install.advanced.title">Advanced Setup</h2>
+      <p class="section-subtitle" data-i18n="install.advanced.subtitle">For power users who want more control.</p>
+
+      <div class="advanced-accordion">
+        <details class="advanced-item">
+          <summary>
+            <span class="advanced-icon">📁</span>
+            <span data-i18n="install.advanced.existing.title">Use existing Notion databases</span>
+          </summary>
+          <div class="advanced-content">
+            <p data-i18n="install.advanced.existing.intro">Instead of creating new databases, you can connect to existing ones:</p>
+            <ol>
+              <li data-i18n="install.advanced.existing.s1">Go to Settings → Database Mapping</li>
+              <li data-i18n="install.advanced.existing.s2">Click "Use existing database" for each type</li>
+              <li data-i18n="install.advanced.existing.s3">Select your database from the dropdown</li>
+              <li data-i18n="install.advanced.existing.s4">Map the properties (we'll guide you)</li>
+            </ol>
+            <div class="requirements-box">
+              <h5 data-i18n="install.advanced.existing.req">Requirements:</h5>
+              <ul>
+                <li><strong>Tasks:</strong> Name, Checkbox, Select, Date properties</li>
+                <li><strong>Bookmarks:</strong> Name, URL, Multi-select properties</li>
+                <li><strong>Notes:</strong> Any database with Name property</li>
+                <li><strong>Prompts:</strong> Any database with Name property</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <details class="advanced-item">
+          <summary>
+            <span class="advanced-icon">⌨️</span>
+            <span data-i18n="install.advanced.shortcuts.title">Customize keyboard shortcuts</span>
+          </summary>
+          <div class="advanced-content">
+            <ol>
+              <li data-i18n="install.advanced.shortcuts.s1">Go to chrome://extensions/shortcuts</li>
+              <li data-i18n="install.advanced.shortcuts.s2">Find "Focus to Notion"</li>
+              <li data-i18n="install.advanced.shortcuts.s3">Click the pencil icon to change any shortcut</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="advanced-item">
+          <summary>
+            <span class="advanced-icon">📥</span>
+            <span data-i18n="install.advanced.import.title">Import existing data</span>
+          </summary>
+          <div class="advanced-content">
+            <p data-i18n="install.advanced.import.intro">Have bookmarks in another tool? Import them:</p>
+            <ol>
+              <li data-i18n="install.advanced.import.s1">Export from your current tool (CSV format)</li>
+              <li data-i18n="install.advanced.import.s2">In extension: Settings → Import Data</li>
+              <li data-i18n="install.advanced.import.s3">Upload CSV file</li>
+              <li data-i18n="install.advanced.import.s4">Map columns to fields</li>
+              <li data-i18n="install.advanced.import.s5">Click Import</li>
+            </ol>
+            <p class="mt-3" data-i18n="install.advanced.import.supported">Supported imports from: Pocket, Raindrop, Browser bookmarks, CSV</p>
+          </div>
+        </details>
+
+        <details class="advanced-item">
+          <summary>
+            <span class="advanced-icon">🔄</span>
+            <span data-i18n="install.advanced.multi.title">Multiple Notion workspaces</span>
+          </summary>
+          <div class="advanced-content">
+            <p data-i18n="install.advanced.multi.current">Currently, you can only sync to one workspace at a time.</p>
+            <p class="mt-2" data-i18n="install.advanced.multi.workaround"><strong>Workaround:</strong></p>
+            <ul>
+              <li data-i18n="install.advanced.multi.w1">Use Notion's native sharing to sync databases between workspaces</li>
+              <li data-i18n="install.advanced.multi.w2">Or use browser profiles with separate extension instances</li>
+            </ul>
+            <p class="text-muted mt-2" data-i18n="install.advanced.multi.coming">Multi-workspace native support: Coming in v2.0</p>
+          </div>
+        </details>
+
+        <details class="advanced-item">
+          <summary>
+            <span class="advanced-icon">💾</span>
+            <span data-i18n="install.advanced.backup.title">Backup your local data</span>
+          </summary>
+          <div class="advanced-content">
+            <p data-i18n="install.advanced.backup.intro">Even with Notion sync, you might want local backups:</p>
+            <ol>
+              <li data-i18n="install.advanced.backup.s1">Settings → Data Management</li>
+              <li data-i18n="install.advanced.backup.s2">Click "Export All Data"</li>
+              <li data-i18n="install.advanced.backup.s3">Choose format: JSON or CSV</li>
+              <li data-i18n="install.advanced.backup.s4">Save file to your computer</li>
+            </ol>
+            <p class="text-muted mt-2" data-i18n="install.advanced.backup.tip">Recommended: Set a monthly reminder to backup.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 9: Troubleshooting -->
+  <section class="install-step troubleshooting-section" id="troubleshooting">
+    <div class="container">
+      <h2 data-i18n="install.trouble.title">Troubleshooting Guide</h2>
+      <p class="section-subtitle" data-i18n="install.trouble.subtitle">Having issues? Find your solution below.</p>
+
+      <div class="trouble-categories">
+        <div class="trouble-category">
+          <h3 data-i18n="install.trouble.connection.title">Connection Issues</h3>
+
+          <div class="trouble-item">
+            <h4 data-i18n="install.trouble.connection.q1">Problem: "Failed to connect to Notion"</h4>
+            <ul class="solution-list">
+              <li data-i18n="install.trouble.connection.a1.s1">Check if popup was blocked (allow popups for extension)</li>
+              <li data-i18n="install.trouble.connection.a1.s2">Make sure you're logged into Notion in browser</li>
+              <li data-i18n="install.trouble.connection.a1.s3">Try logging out of Notion and back in</li>
+              <li data-i18n="install.trouble.connection.a1.s4">Clear extension data: Settings → Reset → Try again</li>
+            </ul>
+          </div>
+
+          <div class="trouble-item">
+            <h4 data-i18n="install.trouble.connection.q2">Problem: "No workspaces found"</h4>
+            <ul class="solution-list">
+              <li data-i18n="install.trouble.connection.a2.s1">Make sure you have at least one Notion workspace</li>
+              <li data-i18n="install.trouble.connection.a2.s2">Check that you're logged into the correct Notion account</li>
+              <li data-i18n="install.trouble.connection.a2.s3">If using SSO, ensure browser session is active</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="trouble-category">
+          <h3 data-i18n="install.trouble.sync.title">Sync Issues</h3>
+
+          <div class="trouble-item">
+            <h4 data-i18n="install.trouble.sync.q1">Problem: "Sync stuck on pending"</h4>
+            <ul class="solution-list">
+              <li data-i18n="install.trouble.sync.a1.s1">Check internet connection</li>
+              <li data-i18n="install.trouble.sync.a1.s2">Click manual sync button (🔄 icon)</li>
+              <li data-i18n="install.trouble.sync.a1.s3">Check Notion API status: status.notion.so</li>
+              <li data-i18n="install.trouble.sync.a1.s4">Review Settings → Sync Log for errors</li>
+            </ul>
+          </div>
+
+          <div class="trouble-item">
+            <h4 data-i18n="install.trouble.sync.q2">Problem: "Data not appearing in Notion"</h4>
+            <ul class="solution-list">
+              <li data-i18n="install.trouble.sync.a2.s1">Wait 5 minutes (sync interval)</li>
+              <li data-i18n="install.trouble.sync.a2.s2">Force sync: Settings → Sync Now</li>
+              <li data-i18n="install.trouble.sync.a2.s3">Check correct workspace is connected</li>
+              <li data-i18n="install.trouble.sync.a2.s4">Verify databases weren't accidentally deleted</li>
+            </ul>
+          </div>
+
+          <div class="trouble-item">
+            <h4 data-i18n="install.trouble.sync.q3">Problem: "Duplicate entries in Notion"</h4>
+            <p class="trouble-cause" data-i18n="install.trouble.sync.a3.cause">Cause: Usually from interrupted sync</p>
+            <ul class="solution-list">
+              <li data-i18n="install.trouble.sync.a3.s1">Delete duplicates manually in Notion</li>
+              <li data-i18n="install.trouble.sync.a3.s2">Force full sync: Settings → Full Resync</li>
+              <li data-i18n="install.trouble.sync.a3.s3">Check for sync conflicts in log</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="trouble-category">
+          <h3 data-i18n="install.trouble.performance.title">Performance Issues</h3>
+
+          <div class="trouble-item">
+            <h4 data-i18n="install.trouble.performance.q1">Problem: "Extension is slow"</h4>
+            <ul class="solution-list">
+              <li data-i18n="install.trouble.performance.a1.s1">Check how many items you have (1000+ may slow down)</li>
+              <li data-i18n="install.trouble.performance.a1.s2">Try archiving old completed tasks</li>
+              <li data-i18n="install.trouble.performance.a1.s3">Clear browser cache</li>
+              <li data-i18n="install.trouble.performance.a1.s4">Disable and re-enable extension</li>
+            </ul>
+          </div>
+
+          <div class="trouble-item">
+            <h4 data-i18n="install.trouble.performance.q2">Problem: "Browser using too much memory"</h4>
+            <ul class="solution-list">
+              <li data-i18n="install.trouble.performance.a2.s1">Close extension sidebar when not using</li>
+              <li data-i18n="install.trouble.performance.a2.s2">Reduce sync frequency to manual</li>
+              <li data-i18n="install.trouble.performance.a2.s3">Archive old data to Notion only</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="still-stuck">
+        <h4 data-i18n="install.trouble.stuck.title">Still stuck?</h4>
+        <div class="support-buttons">
+          <a href="mailto:contact@binhvuong.vn" class="btn btn-secondary" data-i18n="install.trouble.stuck.contact">Contact Support</a>
+          <a href="https://discord.gg/focustonotion" class="btn btn-secondary" target="_blank" data-i18n="install.trouble.stuck.discord">Join Discord Community</a>
+          <a href="https://github.com/vuongnguyenbinh/NotionEX/issues" class="btn btn-secondary" target="_blank" data-i18n="install.trouble.stuck.issues">Check Known Issues</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 10: Next Steps -->
+  <section class="install-step next-steps-section" id="next">
+    <div class="container">
+      <h2 data-i18n="install.next.title">What's Next?</h2>
+      <p class="section-subtitle" data-i18n="install.next.subtitle">You're all set up! Here's how to get the most out of Focus to Notion:</p>
+
+      <div class="next-cards">
+        <a href="features.html" class="next-card">
+          <span class="next-icon">📖</span>
+          <h4 data-i18n="install.next.docs.title">Read the Full Docs</h4>
+          <p data-i18n="install.next.docs.desc">Discover every feature in detail</p>
+          <span class="next-link" data-i18n="install.next.docs.link">Go to Documentation →</span>
+        </a>
+
+        <a href="features.html#use-cases" class="next-card">
+          <span class="next-icon">🎯</span>
+          <h4 data-i18n="install.next.cases.title">Explore Use Cases</h4>
+          <p data-i18n="install.next.cases.desc">See workflows for your role</p>
+          <span class="next-link" data-i18n="install.next.cases.link">View Use Case Guides →</span>
+        </a>
+
+        <a href="https://youtube.com/@binhvuongai" class="next-card" target="_blank">
+          <span class="next-icon">📺</span>
+          <h4 data-i18n="install.next.videos.title">Watch Video Tutorials</h4>
+          <p data-i18n="install.next.videos.desc">Visual guides for common tasks</p>
+          <span class="next-link" data-i18n="install.next.videos.link">YouTube Playlist →</span>
+        </a>
+
+        <a href="https://discord.gg/focustonotion" class="next-card" target="_blank">
+          <span class="next-icon">💬</span>
+          <h4 data-i18n="install.next.community.title">Join the Community</h4>
+          <p data-i18n="install.next.community.desc">Get help, share tips, request features</p>
+          <span class="next-link" data-i18n="install.next.community.link">Discord Server →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <h2 data-i18n="install.cta.title">Questions? Feedback?</h2>
+      <p data-i18n="install.cta.subtitle">We'd love to hear from you.</p>
+      <a href="mailto:contact@binhvuong.vn" class="btn btn-primary btn-lg">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <span data-i18n="install.cta.button">Contact Us</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-enhanced">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Focus to Notion" onerror="this.style.display='none'">
+            <span>Focus to Notion</span>
+          </a>
+          <p data-i18n="footer.tagline">Your browser sidebar for focused productivity. Tasks, bookmarks, notes — synced to Notion.</p>
+        </div>
+
+        <div class="footer-links-group">
+          <h4 data-i18n="footer.product">Product</h4>
+          <ul>
+            <li><a href="features.html" data-i18n="nav.features">Features</a></li>
+            <li><a href="install.html" data-i18n="nav.guide">Install</a></li>
+            <li><a href="https://chromewebstore.google.com/detail/focus-to-notion" target="_blank">Chrome Web Store</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4 data-i18n="footer.resources">Resources</h4>
+          <ul>
+            <li><a href="https://github.com/vuongnguyenbinh/NotionEX" target="_blank">GitHub</a></li>
+            <li><a href="https://github.com/vuongnguyenbinh/NotionEX/issues" target="_blank" data-i18n="footer.issues">Report Issue</a></li>
+            <li><a href="https://discord.gg/focustonotion" target="_blank">Discord</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4 data-i18n="footer.connect">Connect</h4>
+          <ul>
+            <li><a href="https://binhvuong.vn" target="_blank">Binh Vuong AI</a></li>
+            <li><a href="https://youtube.com/@binhvuongai" target="_blank">YouTube</a></li>
+            <li><a href="mailto:contact@binhvuong.vn" data-i18n="footer.contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Focus to Notion. <span data-i18n="footer.credit">Made with ❤️ by</span> <a href="https://binhvuong.vn" target="_blank">Binh Vuong AI Marketing</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
+</body>
+</html>
